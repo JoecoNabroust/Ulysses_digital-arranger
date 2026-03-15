@@ -54,6 +54,9 @@ export function DigitalArrangerShell() {
             <Link href="/library" className="font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4">
               Scholar&apos;s Library
             </Link>
+            <Link href="/feedback" className="font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4">
+              Feedback
+            </Link>
           </div>
         </header>
 
