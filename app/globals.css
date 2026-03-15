@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: #f9f8f3;
+  color: #1a1a1a;
+}
+
+.font-literary {
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+}
+
+.font-ui {
+  font-family: var(--font-inter), "Segoe UI", sans-serif;
+}
