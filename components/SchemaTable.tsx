@@ -11,18 +11,34 @@ export function SchemaTable({ schema }: { schema: EpisodeSchema }) {
   ];
 
   return (
-    <div className="w-full overflow-x-auto rounded-xl border border-charcoal/10 bg-parchment/50 pb-4 scrollbar-thin md:w-full md:max-w-full md:overflow-visible">
-      <div className="mb-2 px-4 pt-3 font-ui text-xs text-charcoal/80 md:hidden">Swipe left/right to view more</div>
-      <div className="flex min-w-max flex-row flex-nowrap gap-6 px-4 pb-3 md:min-w-0 md:w-full md:max-w-full md:flex-wrap md:justify-between md:gap-y-2">
-        {rows.map((row) => (
-          <div
-            key={row.label}
-            className="flex-shrink-0 whitespace-nowrap rounded-lg border border-charcoal/10 bg-white px-3 py-2 md:min-w-[120px] md:flex-1 md:whitespace-normal"
-          >
-            <p className="font-ui text-xs uppercase tracking-wide text-charcoal/80">{row.label}</p>
-            <p className="font-ui text-sm text-charcoal md:text-base">{row.value}</p>
-          </div>
-        ))}
+    <div className="mb-8 w-full">
+      <div className="w-full overflow-x-auto rounded-xl border border-charcoal/10 bg-parchment/50 pb-4 scrollbar-thin md:hidden">
+        <div className="mb-2 px-4 pt-3 font-ui text-xs text-charcoal/80">Swipe left/right to view more</div>
+        <div className="flex flex-row flex-nowrap gap-4 px-4 pb-3 snap-x snap-mandatory">
+          {rows.map((row) => (
+            <div
+              key={row.label}
+              className="min-w-[120px] flex-shrink-0 snap-start rounded-lg border border-charcoal/10 bg-white px-3 py-3 whitespace-normal break-normal [overflow-wrap:break-word] [word-break:normal]"
+            >
+              <p className="font-ui text-xs font-semibold uppercase tracking-wide text-charcoal/70">{row.label}</p>
+              <p className="mt-1 font-ui text-base text-charcoal">{row.value}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="hidden w-full rounded-xl border border-gray-200 bg-gray-100/50 p-4 md:block md:p-6">
+        <div className="grid w-full grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+          {rows.map((row) => (
+            <div
+              key={row.label}
+              className="min-w-0 rounded-lg border border-charcoal/10 bg-white p-3 whitespace-normal break-normal [overflow-wrap:break-word] [word-break:normal]"
+            >
+              <p className="font-ui text-xs font-semibold uppercase tracking-wide text-charcoal/70">{row.label}</p>
+              <p className="mt-1 font-ui text-base md:text-lg text-charcoal">{row.value}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
