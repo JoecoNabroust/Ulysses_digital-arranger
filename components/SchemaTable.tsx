@@ -11,27 +11,16 @@ export function SchemaTable({ schema }: { schema: EpisodeSchema }) {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-xl border border-charcoal/10 bg-white">
-      <table className="min-w-0 w-full text-left text-sm sm:text-base md:min-w-[560px]">
-        <thead className="bg-parchment">
-          <tr>
-            {rows.map((row) => (
-              <th key={row.label} className="px-4 py-3 font-semibold text-charcoal">
-                {row.label}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            {rows.map((row) => (
-              <td key={row.label} className="px-4 py-3 text-charcoal/90">
-                {row.value}
-              </td>
-            ))}
-          </tr>
-        </tbody>
-      </table>
+    <div className="w-full overflow-x-auto rounded-xl border border-charcoal/10 bg-parchment/50 pb-4 scrollbar-thin md:overflow-visible">
+      <div className="mb-2 px-4 pt-3 font-ui text-xs text-charcoal/80 md:hidden">Swipe left/right to view more</div>
+      <div className="flex min-w-max flex-row flex-nowrap gap-6 px-4 pb-3 md:min-w-0 md:justify-between">
+        {rows.map((row) => (
+          <div key={row.label} className="flex-shrink-0 whitespace-nowrap rounded-lg border border-charcoal/10 bg-white px-3 py-2">
+            <p className="font-ui text-xs uppercase tracking-wide text-charcoal/80">{row.label}</p>
+            <p className="font-ui text-sm text-charcoal md:text-base">{row.value}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
