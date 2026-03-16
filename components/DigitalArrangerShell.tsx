@@ -30,8 +30,8 @@ export function DigitalArrangerShell() {
 
   return (
     <div className="w-full max-w-full">
-      <div className="mx-auto grid w-full max-w-screen-xl gap-6 px-4 py-6 md:px-8 lg:grid-cols-[280px_1fr]">
-        <aside className="hidden lg:block">
+      <div className="mx-auto flex w-full max-w-screen-xl flex-col gap-6 px-4 py-6 md:flex-row md:px-8">
+        <aside className="hidden w-full md:block md:w-64 md:shrink-0">
           <EpisodeNavigation
             episodes={ulyssesEpisodes}
             activeEpisodeId={activeEpisode.id}
@@ -39,49 +39,49 @@ export function DigitalArrangerShell() {
           />
         </aside>
 
-        <main className="w-full max-w-full space-y-6">
-        <header className="rounded-2xl border border-charcoal/10 bg-white p-5">
-          <p className="font-ui text-xs uppercase tracking-[0.18em] text-oxford">Modernist Archive</p>
-          <h1 className="font-literary text-2xl text-charcoal md:text-4xl">Ulysses: The Digital Arranger</h1>
-          <p className="mt-2 max-w-3xl font-ui text-base text-charcoal/90">
-            A mobile-responsive scholarly environment combining episode structure, stylistic analysis, and Hayman-inspired
-            arranger cues for teaching and research.
-          </p>
-          <div className="mt-4">
-            <ArrangerToggle />
-            <div className="mt-3 hidden flex-wrap items-center gap-4 md:flex">
-              <Link
-                href="/research"
-                className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
-              >
-                Literature Review and Debates
-              </Link>
-              <Link
-                href="/library"
-                className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
-              >
-                Scholar&apos;s Library
-              </Link>
-              <Link
-                href="/feedback"
-                className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
-              >
-                Feedback
-              </Link>
+        <main className="w-full max-w-4xl space-y-6 break-words whitespace-normal md:mx-auto">
+          <header className="rounded-2xl border border-charcoal/10 bg-white p-4 md:p-10">
+            <p className="font-ui text-xs uppercase tracking-[0.18em] text-oxford">Modernist Archive</p>
+            <h1 className="font-literary text-2xl text-charcoal md:text-4xl">Ulysses: The Digital Arranger</h1>
+            <p className="mt-2 max-w-3xl font-ui text-base md:text-lg text-charcoal/90">
+              A mobile-responsive scholarly environment combining episode structure, stylistic analysis, and Hayman-inspired
+              arranger cues for teaching and research.
+            </p>
+            <div className="mt-4">
+              <ArrangerToggle />
+              <div className="mt-3 hidden flex-wrap items-center gap-4 md:flex">
+                <Link
+                  href="/research"
+                  className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
+                >
+                  Literature Review and Debates
+                </Link>
+                <Link
+                  href="/library"
+                  className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
+                >
+                  Scholar&apos;s Library
+                </Link>
+                <Link
+                  href="/feedback"
+                  className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
+                >
+                  Feedback
+                </Link>
+              </div>
+              <div className="mt-3 grid gap-2 md:hidden">
+                <Link href="/research" className="inline-flex min-h-11 items-center rounded-lg bg-parchment px-3 font-ui text-sm text-oxford">
+                  Literature Review and Debates
+                </Link>
+                <Link href="/library" className="inline-flex min-h-11 items-center rounded-lg bg-parchment px-3 font-ui text-sm text-oxford">
+                  Scholar&apos;s Library
+                </Link>
+                <Link href="/feedback" className="inline-flex min-h-11 items-center rounded-lg bg-parchment px-3 font-ui text-sm text-oxford">
+                  Feedback
+                </Link>
+              </div>
             </div>
-            <div className="mt-3 grid gap-2 md:hidden">
-              <Link href="/research" className="inline-flex min-h-11 items-center rounded-lg bg-parchment px-3 font-ui text-sm text-oxford">
-                Literature Review and Debates
-              </Link>
-              <Link href="/library" className="inline-flex min-h-11 items-center rounded-lg bg-parchment px-3 font-ui text-sm text-oxford">
-                Scholar&apos;s Library
-              </Link>
-              <Link href="/feedback" className="inline-flex min-h-11 items-center rounded-lg bg-parchment px-3 font-ui text-sm text-oxford">
-                Feedback
-              </Link>
-            </div>
-          </div>
-        </header>
+          </header>
 
         <div className="block lg:hidden">
           <EpisodeNavigation
@@ -99,13 +99,13 @@ export function DigitalArrangerShell() {
             animate={{ opacity: 1, x: 0, rotateY: 0 }}
             exit={{ opacity: 0, x: -16, rotateY: 10 }}
             transition={transition}
-            className="grid w-full max-w-full gap-6 lg:grid-cols-[1.1fr_0.9fr]"
+            className="flex w-full flex-col gap-6 md:flex-row"
           >
-            <article className="box-border w-full max-w-full space-y-5 break-words rounded-2xl border border-charcoal/10 bg-white p-5">
+            <article className="box-border w-full min-w-0 space-y-5 break-words whitespace-normal rounded-2xl border border-charcoal/10 bg-white p-4 md:w-[62%] md:p-10">
               <div>
                 <p className="font-ui text-xs uppercase tracking-wider text-charcoal/80">Episode {activeEpisode.id}</p>
                 <h2 className="font-literary text-2xl text-charcoal md:text-3xl">{activeEpisode.title}</h2>
-                <p className="font-ui text-base text-charcoal/85">{activeEpisode.subtitle}</p>
+                <p className="font-ui text-base md:text-lg text-charcoal/85">{activeEpisode.subtitle}</p>
                 <p className="mt-1 font-ui text-sm text-charcoal/80">{activeEpisode.location}</p>
               </div>
 
@@ -117,7 +117,7 @@ export function DigitalArrangerShell() {
                   <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/85">Plot Arc</h3>
                 </div>
                 {activeEpisode.plotSummary.map((paragraph, index) => (
-                  <p key={`${activeEpisode.id}-plot-${index}`} className="font-literary text-base leading-relaxed text-charcoal">
+                  <p key={`${activeEpisode.id}-plot-${index}`} className="font-literary text-base md:text-lg leading-relaxed text-charcoal">
                     {paragraph}
                   </p>
                 ))}
@@ -128,7 +128,7 @@ export function DigitalArrangerShell() {
                 {activeEpisode.stylisticAnalysis.map((note, index) => (
                   <p
                     key={`${activeEpisode.id}-style-${index}`}
-                    className={`rounded-lg p-3 font-ui text-base leading-relaxed ${
+                    className={`rounded-lg p-3 font-ui text-base md:text-lg leading-relaxed ${
                       arrangerMode ? "border border-oxford/30 bg-oxford/5" : "bg-parchment"
                     }`}
                   >
@@ -138,7 +138,7 @@ export function DigitalArrangerShell() {
               </section>
             </article>
 
-            <article className="hidden box-border w-full max-w-full break-words space-y-5 rounded-2xl border border-charcoal/10 bg-white p-5 lg:block">
+            <article className="hidden box-border w-full min-w-0 break-words whitespace-normal space-y-5 rounded-2xl border border-charcoal/10 bg-white p-4 md:block md:w-[38%] md:p-10">
               <NotesPanel episodeId={activeEpisode.id} arrangerMode={arrangerMode} />
             </article>
           </motion.section>
