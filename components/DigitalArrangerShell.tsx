@@ -203,11 +203,9 @@ function NotesPanel({ episodeId, arrangerMode }: { episodeId: number; arrangerMo
   return (
     <>
       <section className="space-y-4 pb-10">
-        <div className="flex items-center gap-2">
+        <div className="mb-4 flex items-start gap-2">
           <Zap className="h-4 w-4 text-slate-400" strokeWidth={1.75} />
-          <h3 className="font-ui mt-0 mb-4 text-base font-semibold uppercase tracking-wide leading-tight text-charcoal/90 md:mb-3">
-            Arranger Notes
-          </h3>
+          <h3 className="font-ui text-base font-semibold uppercase tracking-wide leading-tight text-charcoal/90">Arranger Notes</h3>
         </div>
         {episode.arrangerPresence.map((note, index) => (
           <Fragment key={`${episode.id}-arranger-${index}`}>

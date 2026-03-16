@@ -1256,6 +1256,31 @@ export const characterProfiles: CharacterProfile[] = [
     }
   },
   {
+    name: "Stephen Dedalus",
+    role: "Major",
+    relationships: ["Buck Mulligan (rival companion)", "Leopold Bloom (host/fatherly figure)"],
+    episodes: {
+      1: { status: "Present", note: "Central consciousness in the tower opening." },
+      2: { status: "Present", note: "Teaching and ideological conflict shape the episode." },
+      3: { status: "Present", note: "Sandymount strand monologue dominates the chapter." },
+      4: { status: "Mentioned", note: "Bloom's trajectory runs in structural parallel to Stephen's line." },
+      5: { status: "Mentioned", note: "A foil to Bloom's sensory drift in morning Dublin." },
+      6: { status: "Mentioned", note: "Funeral reflections echo earlier Stephen themes." },
+      7: { status: "Mentioned", note: "Journal-office circulation references Stephen's intellectual milieu." },
+      8: { status: "Mentioned", note: "Remains a parallel but absent consciousness." },
+      9: { status: "Present", note: "Leads Shakespeare disputation in the National Library." },
+      10: { status: "Present", note: "One node in the Wandering Rocks city network." },
+      11: { status: "Mentioned", note: "His social orbit intersects by reference and family echoes." },
+      12: { status: "Mentioned", note: "Nationalist rhetoric is measured against Stephen-era debates." },
+      13: { status: "Mentioned", note: "Parallel narrative strand remains implicit." },
+      14: { status: "Present", note: "Participates in hospital rhetoric and nocturnal drift." },
+      15: { status: "Present", note: "Hallucinatory confrontation culminates in collapse." },
+      16: { status: "Present", note: "Accompanies Bloom to the shelter in post-Circe fatigue." },
+      17: { status: "Present", note: "Shares provisional hospitality scene at Eccles Street." },
+      18: { status: "Mentioned", note: "Appears in Molly's memory and evaluative recall." }
+    }
+  },
+  {
     name: "Molly Bloom",
     role: "Major",
     relationships: ["Leopold Bloom (spouse)", "Blazes Boylan (lover)"],
@@ -1268,21 +1293,233 @@ export const characterProfiles: CharacterProfile[] = [
     }
   },
   {
-    name: "Stephen Dedalus",
-    role: "Major",
-    relationships: ["Buck Mulligan (rival companion)", "Leopold Bloom (host/fatherly figure)"],
+    name: "Blazes Boylan",
+    role: "Minor",
+    relationships: ["Molly Bloom (lover)", "Leopold Bloom (rival)"],
     episodes: {
-      1: { status: "Present", note: "Central consciousness in the tower opening." },
-      2: { status: "Present", note: "Schoolroom and Deasy office debates frame his position." },
-      3: { status: "Present", note: "Sandymount strand interior monologue dominates the episode." },
-      7: { status: "Mentioned", note: "Journal office circuits reference Stephen's movements." },
-      9: { status: "Present", note: "Leads Shakespeare disputation in the National Library." },
-      10: { status: "Present", note: "One node in the Wandering Rocks montage network." },
-      14: { status: "Present", note: "Participates in hospital rhetoric and nocturnal drift." },
-      15: { status: "Present", note: "Hallucinatory confrontation culminates in collapse." },
-      16: { status: "Present", note: "Accompanies Bloom to the shelter in post-Circe fatigue." },
-      17: { status: "Present", note: "Shares provisional hospitality scene at Eccles Street." },
-      18: { status: "Mentioned", note: "Appears in Molly's memory and evaluative recall." }
+      4: { status: "Mentioned", note: "Molly's afternoon appointment drives Bloom's anxiety." },
+      5: { status: "Mentioned", note: "Appears as deferred threat in Bloom's errand drift." },
+      6: { status: "Mentioned", note: "Bloom's funeral reflections remain shadowed by Boylan." },
+      8: { status: "Mentioned", note: "Lunchtime route anticipation intensifies Bloom's unease." },
+      10: { status: "Present", note: "Visible in the Wandering Rocks traffic choreography." },
+      11: { status: "Present", note: "Approach to the assignation structures Sirens tension." },
+      12: { status: "Mentioned", note: "Bloom's social vulnerability remains tied to Boylan." },
+      13: { status: "Mentioned", note: "Background pressure on Bloom's erotic perception." },
+      15: { status: "Mentioned", note: "Nighttown hallucinations recycle Boylan-centered jealousy." },
+      17: { status: "Mentioned", note: "Domestic inventory includes Boylan's trace effects." },
+      18: { status: "Mentioned", note: "Molly recalls Boylan directly in her monologue." }
+    }
+  },
+  {
+    name: "Simon Dedalus",
+    role: "Minor",
+    relationships: ["Stephen Dedalus (father)", "Leopold Bloom (social acquaintance)"],
+    episodes: {
+      1: { status: "Mentioned", note: "Implicit paternal pressure frames Stephen's alienation." },
+      2: { status: "Mentioned", note: "Stephen's school-day thought returns to family burdens." },
+      3: { status: "Mentioned", note: "Paternal memory shadows Stephen's strand reflections." },
+      4: { status: "Mentioned", note: "Bloom's social map includes the Dedalus household." },
+      5: { status: "Mentioned", note: "Echoes in Bloom's citywide associative thinking." },
+      6: { status: "Present", note: "Rides in the funeral carriage with Bloom and others." },
+      7: { status: "Mentioned", note: "Dublin rhetoric circuits reference familiar public figures." },
+      8: { status: "Mentioned", note: "Part of Bloom's ongoing social thought-network." },
+      9: { status: "Mentioned", note: "Paternity debates in the library invoke familial pressures." },
+      10: { status: "Present", note: "Appears in the Wandering Rocks sequence." },
+      11: { status: "Present", note: "Participates in the Ormond's musical and social scene." },
+      12: { status: "Mentioned", note: "Nationalist pub rhetoric overlaps with known Dublin circles." },
+      13: { status: "Mentioned", note: "Remains in background social memory structures." },
+      14: { status: "Mentioned", note: "Stephen-centered contexts imply paternal afterpresence." },
+      15: { status: "Mentioned", note: "Hallucinatory and social references sustain paternal tension." },
+      17: { status: "Mentioned", note: "Bloom's and Stephen's convergence carries Simon's shadow." },
+      18: { status: "Mentioned", note: "Molly's recollection field includes Dedalus family ties." }
+    }
+  },
+  {
+    name: "Buck Mulligan",
+    role: "Minor",
+    relationships: ["Stephen Dedalus (rival companion)", "Haines (tower co-resident)"],
+    episodes: {
+      1: { status: "Present", note: "Dominates opening tower ritual and mock-liturgical banter." },
+      2: { status: "Mentioned", note: "Stephen carries forward resentment from the tower scene." },
+      3: { status: "Mentioned", note: "Strand reflections revisit Mulligan's social aggression." },
+      7: { status: "Mentioned", note: "Dublin talk circuits keep his name in circulation." },
+      10: { status: "Mentioned", note: "Networked city montage recalls Stephen's morning circle." },
+      14: { status: "Present", note: "Appears in Oxen's male rhetorical ensemble." },
+      15: { status: "Mentioned", note: "Nighttown excess echoes earlier masculine performance." },
+      16: { status: "Mentioned", note: "Aftershock dialogue continues traces of prior rivalry." }
+    }
+  },
+  {
+    name: "Haines",
+    role: "Minor",
+    relationships: ["Stephen Dedalus (uneasy observer)", "Buck Mulligan (tower companion)"],
+    episodes: {
+      1: { status: "Present", note: "Colonial outsider presence intensifies tower tensions." },
+      2: { status: "Mentioned", note: "Morning interactions still structure Stephen's mood." },
+      3: { status: "Mentioned", note: "Strand interiority returns to tower power dynamics." },
+      10: { status: "Mentioned", note: "Wandering social references preserve earlier contact zones." }
+    }
+  },
+  {
+    name: "Mr. Deasy",
+    role: "Minor",
+    relationships: ["Stephen Dedalus (employer/lecturer)"],
+    episodes: {
+      2: { status: "Present", note: "Embodies conservative pedagogy and anti-Semitic ideology." },
+      7: { status: "Mentioned", note: "Document circulation links back to Deasy's letter." },
+      9: { status: "Mentioned", note: "Institutional authority remains a contested horizon." }
+    }
+  },
+  {
+    name: "Cyril Sargent",
+    role: "Minor",
+    relationships: ["Stephen Dedalus (student)"],
+    episodes: {
+      2: { status: "Present", note: "Schoolroom encounter foregrounds class and pedagogy." },
+      3: { status: "Mentioned", note: "Stephen's reflections sustain the classroom's affective residue." }
+    }
+  },
+  {
+    name: "Old Milk Woman",
+    role: "Minor",
+    relationships: ["Stephen Dedalus (tower encounter)"],
+    episodes: {
+      1: { status: "Present", note: "Her brief appearance crystallizes class and nation anxieties." },
+      3: { status: "Mentioned", note: "Stephen's interiority revisits earlier symbolic figures." }
+    }
+  },
+  {
+    name: "Martha Clifford",
+    role: "Minor",
+    relationships: ["Leopold Bloom (epistolary flirtation)"],
+    episodes: {
+      5: { status: "Mentioned", note: "Letter exchange structures Bloom's mediated intimacy." },
+      8: { status: "Mentioned", note: "Residual erotic correspondence shades Bloom's lunchtime thought." },
+      11: { status: "Mentioned", note: "Acoustic desire motifs resonate with earlier epistolary cues." }
+    }
+  },
+  {
+    name: "Bantam Lyons",
+    role: "Minor",
+    relationships: ["Leopold Bloom (miscommunication encounter)"],
+    episodes: {
+      5: { status: "Present", note: "Betting misunderstanding reveals social code slippage." },
+      12: { status: "Mentioned", note: "Pub discourse recycles Bloom-adjacent rumor networks." }
+    }
+  },
+  {
+    name: "Martin Cunningham",
+    role: "Minor",
+    relationships: ["Leopold Bloom (funeral companion)"],
+    episodes: {
+      6: { status: "Present", note: "Key carriage interlocutor in funeral social dynamics." },
+      10: { status: "Present", note: "Reappears in the distributed city montage." },
+      12: { status: "Mentioned", note: "Bloom's social positioning references known civic ties." }
+    }
+  },
+  {
+    name: "Jack Power",
+    role: "Minor",
+    relationships: ["Leopold Bloom (funeral companion)"],
+    episodes: {
+      6: { status: "Present", note: "Participates in funerary conversation and social framing." },
+      10: { status: "Mentioned", note: "City movement keeps funeral network proximate." }
+    }
+  },
+  {
+    name: "Myles Crawford",
+    role: "Minor",
+    relationships: ["Leopold Bloom (press-office gatekeeper)"],
+    episodes: {
+      7: { status: "Present", note: "Rhetorical bravado shapes Aeolus newsroom dynamics." },
+      10: { status: "Mentioned", note: "Print-sphere social circuits continue into montage form." }
+    }
+  },
+  {
+    name: "J. J. O'Molloy",
+    role: "Minor",
+    relationships: ["Leopold Bloom (newsroom acquaintance)"],
+    episodes: {
+      7: { status: "Present", note: "Contributes to legal-rhetorical atmosphere in Aeolus." },
+      10: { status: "Mentioned", note: "Remains part of Dublin's interlocking professional networks." }
+    }
+  },
+  {
+    name: "Lenehan",
+    role: "Minor",
+    relationships: ["Leopold Bloom (social foil)", "Blazes Boylan (associate)"],
+    episodes: {
+      7: { status: "Present", note: "Moves through newsroom wit and opportunistic banter." },
+      8: { status: "Mentioned", note: "Bloom's city observations remain aware of his social type." },
+      10: { status: "Present", note: "Appears in Wandering Rocks connective traffic." },
+      11: { status: "Present", note: "Barroom acoustics include Lenehan's performative presence." },
+      12: { status: "Mentioned", note: "Pub-episode discourse reflects similar social energies." }
+    }
+  },
+  {
+    name: "Josie Breen",
+    role: "Minor",
+    relationships: ["Mrs. Breen (spouse)", "Leopold Bloom (street encounter)"],
+    episodes: {
+      8: { status: "Present", note: "Street meeting contributes to Lestrygonians' social texture." },
+      10: { status: "Mentioned", note: "City montage preserves traces of prior street contacts." }
+    }
+  },
+  {
+    name: "Mrs. Breen",
+    role: "Minor",
+    relationships: ["Josie Breen (spouse)", "Leopold Bloom (street encounter)"],
+    episodes: {
+      8: { status: "Present", note: "Appears with Josie in lunchtime city interaction." },
+      10: { status: "Mentioned", note: "Wandering Rocks logic links dispersed encounters." }
+    }
+  },
+  {
+    name: "John Eglinton",
+    role: "Minor",
+    relationships: ["Stephen Dedalus (library interlocutor)"],
+    episodes: {
+      9: { status: "Present", note: "Challenges and reframes Stephen's Shakespeare claims." }
+    }
+  },
+  {
+    name: "A. E. (George Russell)",
+    role: "Minor",
+    relationships: ["Stephen Dedalus (library interlocutor)"],
+    episodes: {
+      9: { status: "Present", note: "Adds ideological and aesthetic pressure to the disputation." }
+    }
+  },
+  {
+    name: "Lyster",
+    role: "Minor",
+    relationships: ["Stephen Dedalus (library facilitator)"],
+    episodes: {
+      9: { status: "Present", note: "Anchors the institutional space of the library scene." }
+    }
+  },
+  {
+    name: "Father Conmee",
+    role: "Minor",
+    relationships: ["Dublin civic and clerical network (Wandering Rocks)"],
+    episodes: {
+      10: { status: "Present", note: "One of the key moving perspectives in montage form." }
+    }
+  },
+  {
+    name: "Miss Douce",
+    role: "Minor",
+    relationships: ["Miss Kennedy (bar partner)", "Leopold Bloom (observer/listener)"],
+    episodes: {
+      11: { status: "Present", note: "Operatic flirtation and sonic display define Sirens texture." }
+    }
+  },
+  {
+    name: "Miss Kennedy",
+    role: "Minor",
+    relationships: ["Miss Douce (bar partner)", "Leopold Bloom (observer/listener)"],
+    episodes: {
+      11: { status: "Present", note: "Part of the Ormond's gendered acoustic choreography." }
     }
   },
   {
@@ -1295,12 +1532,103 @@ export const characterProfiles: CharacterProfile[] = [
     }
   },
   {
+    name: "Joe Hynes",
+    role: "Minor",
+    relationships: ["Leopold Bloom (pub and civic contact)"],
+    episodes: {
+      12: { status: "Present", note: "Participates in Cyclops social and political discourse." },
+      6: { status: "Mentioned", note: "Funeral circuits overlap with shared Dublin acquaintances." }
+    }
+  },
+  {
+    name: "Nosey Flynn",
+    role: "Minor",
+    relationships: ["The Citizen (pub associate)", "Leopold Bloom (antagonistic pub context)"],
+    episodes: {
+      12: { status: "Present", note: "Contributes to pubroom pressure and group dynamics." }
+    }
+  },
+  {
+    name: "Gerty MacDowell",
+    role: "Minor",
+    relationships: ["Leopold Bloom (asymmetrical encounter at Sandymount)"],
+    episodes: {
+      13: { status: "Present", note: "Primary focal voice in Nausicaa's first movement." }
+    }
+  },
+  {
+    name: "Cissy Caffrey",
+    role: "Minor",
+    relationships: ["Gerty MacDowell (beach companion)"],
+    episodes: {
+      13: { status: "Present", note: "Shapes social context around Gerty on the strand." }
+    }
+  },
+  {
+    name: "Edy Boardman",
+    role: "Minor",
+    relationships: ["Gerty MacDowell (beach companion)"],
+    episodes: {
+      13: { status: "Present", note: "Contributes to Nausicaa's social and visual tableau." }
+    }
+  },
+  {
+    name: "Mina Purefoy",
+    role: "Minor",
+    relationships: ["Leopold Bloom (hospital visitor)", "Stephen Dedalus (hospital setting)"],
+    episodes: {
+      14: { status: "Present", note: "Her labor is the ethical center of Oxen of the Sun." }
+    }
+  },
+  {
+    name: "Lynch",
+    role: "Minor",
+    relationships: ["Stephen Dedalus (companion)", "Leopold Bloom (nighttown witness)"],
+    episodes: {
+      14: { status: "Present", note: "Part of the hospital's masculine rhetorical crowd." },
+      15: { status: "Present", note: "Nighttown sequence includes Lynch in shifting alignments." }
+    }
+  },
+  {
     name: "Bella Cohen",
     role: "Minor",
     relationships: ["Leopold Bloom (nighttown antagonist-host)", "Stephen Dedalus (witness)"],
     episodes: {
       15: { status: "Present", note: "Nighttown figure controlling key Circe transformations." },
       16: { status: "Mentioned", note: "Reverberates in post-hallucinatory aftertalk." }
+    }
+  },
+  {
+    name: "Zoe Higgins",
+    role: "Minor",
+    relationships: ["Leopold Bloom (nighttown interlocutor)", "Bella Cohen (brothel network)"],
+    episodes: {
+      15: { status: "Present", note: "Key participant in Circe's theatrical transformations." }
+    }
+  },
+  {
+    name: "D. B. Murphy",
+    role: "Minor",
+    relationships: ["Leopold Bloom (shelter interlocutor)", "Stephen Dedalus (late-night setting)"],
+    episodes: {
+      16: { status: "Present", note: "Maritime storytelling destabilizes certainty in Eumaeus." }
+    }
+  },
+  {
+    name: "Skin-the-Goat",
+    role: "Minor",
+    relationships: ["Leopold Bloom (shelter milieu)"],
+    episodes: {
+      16: { status: "Present", note: "Contributes to the shelter's historical and political undertones." }
+    }
+  },
+  {
+    name: "Milly Bloom",
+    role: "Minor",
+    relationships: ["Leopold Bloom (daughter)", "Molly Bloom (daughter)"],
+    episodes: {
+      4: { status: "Mentioned", note: "Letter references frame domestic memory and distance." },
+      18: { status: "Mentioned", note: "Molly's monologue reconsiders family and generational change." }
     }
   }
 ];
