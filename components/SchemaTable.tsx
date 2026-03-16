@@ -5,7 +5,7 @@ export function SchemaTable({ schema }: { schema: EpisodeSchema }) {
     { label: "Time", value: schema.time },
     { label: "Color", value: schema.color },
     { label: "Organ", value: schema.organ },
-    { label: "Art", value: schema.art },
+    { label: "Displine", value: schema.art },
     { label: "Technique", value: schema.technique },
     { label: "Symbol", value: schema.symbol }
   ];

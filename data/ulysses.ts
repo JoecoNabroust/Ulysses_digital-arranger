@@ -66,10 +66,10 @@ const telemachus: UlyssesEpisode = {
   location: "Sandycove, Martello Tower",
   schema: {
     time: "8:00 a.m.",
-    color: "White/Gold",
-    organ: "N/A (Opening consciousness)",
+    color: "Gold / White",
+    organ: "N/A",
     art: "Theology",
-    technique: "Initial Style",
+    technique: "Narrative (young)",
     symbol: "Heir"
   },
   plotSummary: [
