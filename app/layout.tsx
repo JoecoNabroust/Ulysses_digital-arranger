@@ -23,13 +23,13 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1
+  userScalable: true
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en" className="overflow-x-hidden">
-      <body className={`${inter.variable} ${playfair.variable} font-ui overflow-x-hidden text-base leading-relaxed antialiased`}>
+    <html lang="en">
+      <body className={`${inter.variable} ${playfair.variable} font-ui text-base leading-relaxed antialiased`}>
         <ArrangerModeProvider>{children}</ArrangerModeProvider>
       </body>
     </html>

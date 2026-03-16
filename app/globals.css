@@ -15,7 +15,6 @@
 body {
   background: #f9f8f3;
   color: #1a1a1a;
-  overflow-x: hidden;
 }
 
 img,
@@ -30,6 +29,23 @@ code {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   word-break: break-word;
+}
+
+main,
+article,
+section,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+li {
+  overflow-wrap: anywhere;
 }
 
 .font-literary {

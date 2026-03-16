@@ -29,8 +29,8 @@ export function DigitalArrangerShell() {
   );
 
   return (
-    <div className="w-full max-w-full overflow-x-hidden">
-      <div className="mx-auto grid w-full max-w-7xl gap-6 px-4 py-6 md:px-8 lg:grid-cols-[280px_1fr]">
+    <div className="w-full max-w-full">
+      <div className="mx-auto grid w-full max-w-screen-xl gap-6 px-4 py-6 md:px-8 lg:grid-cols-[280px_1fr]">
         <aside className="hidden lg:block">
           <EpisodeNavigation
             episodes={ulyssesEpisodes}
@@ -101,7 +101,7 @@ export function DigitalArrangerShell() {
             transition={transition}
             className="grid w-full max-w-full gap-6 lg:grid-cols-[1.1fr_0.9fr]"
           >
-            <article className="box-border w-full max-w-full space-y-5 rounded-2xl border border-charcoal/10 bg-white p-5">
+            <article className="box-border w-full max-w-full space-y-5 break-words rounded-2xl border border-charcoal/10 bg-white p-5">
               <div>
                 <p className="font-ui text-xs uppercase tracking-wider text-charcoal/80">Episode {activeEpisode.id}</p>
                 <h2 className="font-literary text-2xl text-charcoal md:text-3xl">{activeEpisode.title}</h2>
@@ -138,7 +138,7 @@ export function DigitalArrangerShell() {
               </section>
             </article>
 
-            <article className="hidden box-border w-full max-w-full space-y-5 rounded-2xl border border-charcoal/10 bg-white p-5 lg:block">
+            <article className="hidden box-border w-full max-w-full break-words space-y-5 rounded-2xl border border-charcoal/10 bg-white p-5 lg:block">
               <NotesPanel episodeId={activeEpisode.id} arrangerMode={arrangerMode} />
             </article>
           </motion.section>
