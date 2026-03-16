@@ -10,7 +10,7 @@ export function ArrangerToggle() {
     <button
       type="button"
       onClick={toggleArrangerMode}
-      className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition ${
+      className={`inline-flex min-h-11 items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition ${
         arrangerMode
           ? "border-oxford bg-oxford text-white"
           : "border-charcoal/20 bg-white text-charcoal hover:border-oxford/50"

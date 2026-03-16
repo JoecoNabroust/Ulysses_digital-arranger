@@ -28,8 +28,8 @@ export default function ResearchPage() {
     <main className="mx-auto max-w-4xl space-y-6 px-4 py-8">
       <header className="rounded-2xl border border-charcoal/10 bg-white p-6">
         <p className="font-ui text-xs uppercase tracking-[0.18em] text-oxford">Research and Literature Review</p>
-        <h1 className="mt-2 font-literary text-4xl text-charcoal">Key Debates in Ulysses Studies</h1>
-        <p className="mt-2 font-ui text-sm text-charcoal/80">
+        <h1 className="mt-2 font-literary text-2xl text-charcoal md:text-4xl">Key Debates in Ulysses Studies</h1>
+        <p className="mt-2 font-ui text-base text-charcoal/90">
           This page collects high-value scholarly conversations for coursework, thesis framing, and digital humanities annotation.
         </p>
       </header>
@@ -38,12 +38,12 @@ export default function ResearchPage() {
         {debates.map((debate) => (
           <article key={debate.title} className="rounded-xl border border-charcoal/10 bg-white p-5">
             <h2 className="font-literary text-2xl text-charcoal">{debate.title}</h2>
-            <p className="mt-2 font-ui text-sm leading-7 text-charcoal/85">{debate.detail}</p>
+            <p className="mt-2 font-ui text-base leading-relaxed text-charcoal/95">{debate.detail}</p>
           </article>
         ))}
       </section>
 
-      <Link href="/" className="font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4">
+      <Link href="/" className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4">
         Return to Episode Viewer
       </Link>
     </main>

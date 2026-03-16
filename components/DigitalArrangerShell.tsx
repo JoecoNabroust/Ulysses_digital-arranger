@@ -41,20 +41,29 @@ export function DigitalArrangerShell() {
       <main className="space-y-6">
         <header className="rounded-2xl border border-charcoal/10 bg-white p-5">
           <p className="font-ui text-xs uppercase tracking-[0.18em] text-oxford">Modernist Archive</p>
-          <h1 className="font-literary text-3xl text-charcoal sm:text-4xl">Ulysses: The Digital Arranger</h1>
-          <p className="mt-2 max-w-3xl font-ui text-sm text-charcoal/80">
+          <h1 className="font-literary text-2xl text-charcoal md:text-4xl">Ulysses: The Digital Arranger</h1>
+          <p className="mt-2 max-w-3xl font-ui text-base text-charcoal/90">
             A mobile-responsive scholarly environment combining episode structure, stylistic analysis, and Hayman-inspired
             arranger cues for teaching and research.
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <ArrangerToggle />
-            <Link href="/research" className="font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4">
+            <Link
+              href="/research"
+              className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
+            >
               Literature Review and Debates
             </Link>
-            <Link href="/library" className="font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4">
+            <Link
+              href="/library"
+              className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
+            >
               Scholar&apos;s Library
             </Link>
-            <Link href="/feedback" className="font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4">
+            <Link
+              href="/feedback"
+              className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
+            >
               Feedback
             </Link>
           </div>
@@ -65,6 +74,7 @@ export function DigitalArrangerShell() {
             episodes={ulyssesEpisodes}
             activeEpisodeId={activeEpisode.id}
             onSelectEpisode={setActiveEpisodeId}
+            mobile
           />
         </div>
 
@@ -79,10 +89,10 @@ export function DigitalArrangerShell() {
           >
             <article className="space-y-5 rounded-2xl border border-charcoal/10 bg-white p-5">
               <div>
-                <p className="font-ui text-xs uppercase tracking-wider text-charcoal/60">Episode {activeEpisode.id}</p>
-                <h2 className="font-literary text-3xl text-charcoal">{activeEpisode.title}</h2>
-                <p className="font-ui text-sm text-charcoal/70">{activeEpisode.subtitle}</p>
-                <p className="mt-1 font-ui text-xs text-charcoal/60">{activeEpisode.location}</p>
+                <p className="font-ui text-xs uppercase tracking-wider text-charcoal/80">Episode {activeEpisode.id}</p>
+                <h2 className="font-literary text-2xl text-charcoal md:text-3xl">{activeEpisode.title}</h2>
+                <p className="font-ui text-base text-charcoal/85">{activeEpisode.subtitle}</p>
+                <p className="mt-1 font-ui text-sm text-charcoal/80">{activeEpisode.location}</p>
               </div>
 
               <SchemaTable schema={activeEpisode.schema} />
@@ -90,21 +100,21 @@ export function DigitalArrangerShell() {
               <section className="space-y-3">
                 <div className="flex items-center gap-2">
                   <Book className="h-4 w-4 text-oxford" />
-                  <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/70">Plot Arc</h3>
+                  <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/85">Plot Arc</h3>
                 </div>
                 {activeEpisode.plotSummary.map((paragraph, index) => (
-                  <p key={`${activeEpisode.id}-plot-${index}`} className="font-literary leading-7 text-charcoal/95">
+                  <p key={`${activeEpisode.id}-plot-${index}`} className="font-literary text-base leading-relaxed text-charcoal">
                     {paragraph}
                   </p>
                 ))}
               </section>
 
               <section className="space-y-3">
-                <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/70">Stylistic Analysis</h3>
+                <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/85">Stylistic Analysis</h3>
                 {activeEpisode.stylisticAnalysis.map((note, index) => (
                   <p
                     key={`${activeEpisode.id}-style-${index}`}
-                    className={`rounded-lg p-3 font-ui leading-7 ${
+                    className={`rounded-lg p-3 font-ui text-base leading-relaxed ${
                       arrangerMode ? "border border-oxford/30 bg-oxford/5" : "bg-parchment"
                     }`}
                   >
@@ -126,7 +136,7 @@ export function DigitalArrangerShell() {
       <button
         type="button"
         onClick={() => setNotesOpen(true)}
-        className="fixed bottom-6 right-6 z-20 inline-flex items-center gap-2 rounded-full bg-oxford px-4 py-3 font-ui text-sm text-white shadow-lg lg:hidden"
+        className="fixed bottom-6 right-6 z-20 inline-flex min-h-11 items-center gap-2 rounded-full bg-oxford px-4 py-3 font-ui text-sm text-white shadow-lg lg:hidden"
       >
         <Zap className="h-4 w-4" />
         Notes
@@ -150,10 +160,10 @@ export function DigitalArrangerShell() {
               className="fixed inset-x-0 bottom-0 z-40 max-h-[78vh] overflow-y-auto rounded-t-2xl border-t border-charcoal/10 bg-white p-5 lg:hidden"
             >
               <div className="mb-4 flex items-center justify-between">
-                <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/70">Scholarly Notes</h3>
+                <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/85">Scholarly Notes</h3>
                 <button
                   type="button"
-                  className="rounded-full p-2 text-charcoal/70 hover:bg-parchment"
+                  className="min-h-11 min-w-11 rounded-full p-2.5 text-charcoal/80 hover:bg-parchment"
                   onClick={() => setNotesOpen(false)}
                 >
                   <X className="h-4 w-4" />
@@ -180,7 +190,7 @@ function NotesPanel({ episodeId, arrangerMode }: { episodeId: number; arrangerMo
       <section className="space-y-3">
         <div className="flex items-center gap-2">
           <Zap className="h-4 w-4 text-oxford" />
-          <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/70">Arranger Notes</h3>
+          <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/85">Arranger Notes</h3>
         </div>
         {episode.arrangerPresence.map((note, index) => (
           <div
@@ -189,8 +199,8 @@ function NotesPanel({ episodeId, arrangerMode }: { episodeId: number; arrangerMo
               arrangerMode ? "border-oxford/40 bg-oxford/5" : "border-charcoal/10 bg-parchment"
             }`}
           >
-            <p className="font-ui text-xs uppercase tracking-wide text-charcoal/60">{note.cue}</p>
-            <p className="mt-1 font-ui text-sm leading-6 text-charcoal/90">{note.commentary}</p>
+            <p className="font-ui text-xs uppercase tracking-wide text-charcoal/80">{note.cue}</p>
+            <p className="mt-1 font-ui text-base leading-relaxed text-charcoal/95">{note.commentary}</p>
           </div>
         ))}
       </section>
@@ -198,11 +208,11 @@ function NotesPanel({ episodeId, arrangerMode }: { episodeId: number; arrangerMo
       <section className="space-y-3">
         <div className="flex items-center gap-2">
           <Music className="h-4 w-4 text-oxford" />
-          <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/70">Intermediality</h3>
+          <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/85">Intermediality</h3>
         </div>
         <ul className="space-y-2">
           {episode.intermediality.music.map((item, index) => (
-            <li key={`${episode.id}-music-${index}`} className="rounded-lg bg-parchment p-3 font-ui text-sm text-charcoal/90">
+            <li key={`${episode.id}-music-${index}`} className="rounded-lg bg-parchment p-3 font-ui text-base text-charcoal/95">
               {item}
             </li>
           ))}
@@ -210,10 +220,10 @@ function NotesPanel({ episodeId, arrangerMode }: { episodeId: number; arrangerMo
       </section>
 
       <section className="space-y-3">
-        <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/70">Literature Review</h3>
+        <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/85">Literature Review</h3>
         <ul className="space-y-2">
           {episode.scholarlyAnnotations.literatureReview.map((item, index) => (
-            <li key={`${episode.id}-lit-${index}`} className="rounded-lg bg-parchment p-3 font-ui text-sm text-charcoal/90">
+            <li key={`${episode.id}-lit-${index}`} className="rounded-lg bg-parchment p-3 font-ui text-base text-charcoal/95">
               {item}
             </li>
           ))}
@@ -223,14 +233,17 @@ function NotesPanel({ episodeId, arrangerMode }: { episodeId: number; arrangerMo
       <section className="space-y-3 rounded-xl border border-charcoal/10 bg-white p-4">
         <div className="flex items-center gap-2">
           <BookOpen className="h-4 w-4 text-oxford" />
-          <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/70">Further Reading</h3>
+          <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/85">Further Reading</h3>
         </div>
         <p className="font-literary text-lg text-charcoal">
           {recommendedWork.title} ({recommendedWork.year})
         </p>
-        <p className="font-ui text-sm text-charcoal/80">{recommendedWork.author}</p>
-        <p className="font-ui text-sm leading-6 text-charcoal/85">{recommendedWork.connection.note}</p>
-        <Link href="/library" className="font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4">
+        <p className="font-ui text-base text-charcoal/90">{recommendedWork.author}</p>
+        <p className="font-ui text-base leading-relaxed text-charcoal/95">{recommendedWork.connection.note}</p>
+        <Link
+          href="/library"
+          className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
+        >
           Open full Scholar&apos;s Library
         </Link>
       </section>
