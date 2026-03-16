@@ -12,7 +12,7 @@ export function SchemaTable({ schema }: { schema: EpisodeSchema }) {
 
   return (
     <div className="overflow-x-auto rounded-xl border border-charcoal/10 bg-white">
-      <table className="min-w-[560px] w-full text-left text-sm sm:text-base">
+      <table className="w-full text-left text-sm sm:text-base md:min-w-[560px]">
         <thead className="bg-parchment">
           <tr>
             {rows.map((row) => (

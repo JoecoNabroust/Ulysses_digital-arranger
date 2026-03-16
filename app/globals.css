@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   color-scheme: light;
 }
@@ -10,6 +16,20 @@ body {
   background: #f9f8f3;
   color: #1a1a1a;
   overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+pre,
+code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .font-literary {

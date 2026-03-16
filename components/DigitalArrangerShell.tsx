@@ -29,16 +29,17 @@ export function DigitalArrangerShell() {
   );
 
   return (
-    <div className="mx-auto grid max-w-7xl gap-6 px-4 py-6 lg:grid-cols-[280px_1fr]">
-      <aside className="hidden lg:block">
-        <EpisodeNavigation
-          episodes={ulyssesEpisodes}
-          activeEpisodeId={activeEpisode.id}
-          onSelectEpisode={setActiveEpisodeId}
-        />
-      </aside>
+    <div className="w-full max-w-full overflow-x-hidden">
+      <div className="mx-auto grid w-full max-w-7xl gap-6 px-4 py-6 md:px-8 lg:grid-cols-[280px_1fr]">
+        <aside className="hidden lg:block">
+          <EpisodeNavigation
+            episodes={ulyssesEpisodes}
+            activeEpisodeId={activeEpisode.id}
+            onSelectEpisode={setActiveEpisodeId}
+          />
+        </aside>
 
-      <main className="space-y-6">
+        <main className="w-full max-w-full space-y-6">
         <header className="rounded-2xl border border-charcoal/10 bg-white p-5">
           <p className="font-ui text-xs uppercase tracking-[0.18em] text-oxford">Modernist Archive</p>
           <h1 className="font-literary text-2xl text-charcoal md:text-4xl">Ulysses: The Digital Arranger</h1>
@@ -46,26 +47,39 @@ export function DigitalArrangerShell() {
             A mobile-responsive scholarly environment combining episode structure, stylistic analysis, and Hayman-inspired
             arranger cues for teaching and research.
           </p>
-          <div className="mt-4 flex flex-wrap items-center gap-3">
+          <div className="mt-4">
             <ArrangerToggle />
-            <Link
-              href="/research"
-              className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
-            >
-              Literature Review and Debates
-            </Link>
-            <Link
-              href="/library"
-              className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
-            >
-              Scholar&apos;s Library
-            </Link>
-            <Link
-              href="/feedback"
-              className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
-            >
-              Feedback
-            </Link>
+            <div className="mt-3 hidden flex-wrap items-center gap-4 md:flex">
+              <Link
+                href="/research"
+                className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
+              >
+                Literature Review and Debates
+              </Link>
+              <Link
+                href="/library"
+                className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
+              >
+                Scholar&apos;s Library
+              </Link>
+              <Link
+                href="/feedback"
+                className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
+              >
+                Feedback
+              </Link>
+            </div>
+            <div className="mt-3 grid gap-2 md:hidden">
+              <Link href="/research" className="inline-flex min-h-11 items-center rounded-lg bg-parchment px-3 font-ui text-sm text-oxford">
+                Literature Review and Debates
+              </Link>
+              <Link href="/library" className="inline-flex min-h-11 items-center rounded-lg bg-parchment px-3 font-ui text-sm text-oxford">
+                Scholar&apos;s Library
+              </Link>
+              <Link href="/feedback" className="inline-flex min-h-11 items-center rounded-lg bg-parchment px-3 font-ui text-sm text-oxford">
+                Feedback
+              </Link>
+            </div>
           </div>
         </header>
 
@@ -85,9 +99,9 @@ export function DigitalArrangerShell() {
             animate={{ opacity: 1, x: 0, rotateY: 0 }}
             exit={{ opacity: 0, x: -16, rotateY: 10 }}
             transition={transition}
-            className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]"
+            className="grid w-full max-w-full gap-6 lg:grid-cols-[1.1fr_0.9fr]"
           >
-            <article className="space-y-5 rounded-2xl border border-charcoal/10 bg-white p-5">
+            <article className="box-border w-full max-w-full space-y-5 rounded-2xl border border-charcoal/10 bg-white p-5">
               <div>
                 <p className="font-ui text-xs uppercase tracking-wider text-charcoal/80">Episode {activeEpisode.id}</p>
                 <h2 className="font-literary text-2xl text-charcoal md:text-3xl">{activeEpisode.title}</h2>
@@ -124,14 +138,15 @@ export function DigitalArrangerShell() {
               </section>
             </article>
 
-            <article className="hidden space-y-5 rounded-2xl border border-charcoal/10 bg-white p-5 lg:block">
+            <article className="hidden box-border w-full max-w-full space-y-5 rounded-2xl border border-charcoal/10 bg-white p-5 lg:block">
               <NotesPanel episodeId={activeEpisode.id} arrangerMode={arrangerMode} />
             </article>
           </motion.section>
         </AnimatePresence>
 
         <CharacterHub characters={characterProfiles} />
-      </main>
+        </main>
+      </div>
 
       <button
         type="button"

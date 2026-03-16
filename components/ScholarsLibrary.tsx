@@ -17,7 +17,7 @@ export function ScholarsLibrary() {
   }, [activeTag]);
 
   return (
-    <main className="mx-auto max-w-6xl space-y-6 px-4 py-8">
+    <main className="mx-auto w-full max-w-6xl space-y-6 px-4 py-8 md:px-8">
       <header className="rounded-2xl border border-charcoal/10 bg-white p-6">
         <p className="font-ui text-xs uppercase tracking-[0.18em] text-oxford">Scholar&apos;s Library</p>
         <h1 className="mt-2 font-literary text-2xl text-charcoal md:text-4xl">Foundational Works and Critical Pathways</h1>
