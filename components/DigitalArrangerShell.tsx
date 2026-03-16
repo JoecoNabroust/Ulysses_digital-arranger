@@ -101,7 +101,7 @@ export function DigitalArrangerShell() {
             transition={transition}
             className="flex w-full flex-col gap-6 md:flex-row"
           >
-            <article className="box-border w-full min-w-0 space-y-5 break-words whitespace-normal rounded-2xl border border-charcoal/10 bg-white p-4 md:w-[62%] md:p-10">
+            <article className="relative box-border w-full min-w-0 overflow-hidden space-y-5 break-words whitespace-normal rounded-2xl border border-charcoal/10 bg-white p-4 md:w-[62%] md:p-10">
               <div>
                 <p className="font-ui text-xs uppercase tracking-wider text-charcoal/80">Episode {activeEpisode.id}</p>
                 <h2 className="font-literary text-2xl text-charcoal md:text-3xl">{activeEpisode.title}</h2>
