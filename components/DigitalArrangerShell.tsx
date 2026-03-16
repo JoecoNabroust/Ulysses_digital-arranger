@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Book, BookOpen, Music, X, Zap } from "lucide-react";
 import Link from "next/link";
@@ -138,7 +138,7 @@ export function DigitalArrangerShell() {
               </section>
             </article>
 
-            <article className="hidden box-border w-full min-w-0 break-words whitespace-normal space-y-5 rounded-2xl border border-charcoal/10 bg-white p-4 md:block md:w-[38%] md:p-10">
+            <article className="hidden box-border w-full min-w-0 break-words whitespace-normal space-y-5 rounded-2xl border border-charcoal/10 bg-white p-5 md:block md:w-[38%] md:p-6">
               <NotesPanel episodeId={activeEpisode.id} arrangerMode={arrangerMode} />
             </article>
           </motion.section>
@@ -172,10 +172,10 @@ export function DigitalArrangerShell() {
               animate={{ y: 0 }}
               exit={{ y: "100%" }}
               transition={transition}
-              className="fixed inset-x-0 bottom-0 z-40 max-h-[78vh] overflow-y-auto rounded-t-2xl border-t border-charcoal/10 bg-white p-5 lg:hidden"
+              className="fixed inset-x-0 bottom-0 z-40 max-h-[78vh] overflow-y-auto rounded-t-2xl border-t border-charcoal/10 bg-white px-5 py-8 lg:hidden"
             >
               <div className="mb-4 flex items-center justify-between">
-                <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/85">Scholarly Notes</h3>
+                <h3 className="font-ui text-base font-semibold uppercase tracking-wide leading-tight text-charcoal/90">Scholarly Notes</h3>
                 <button
                   type="button"
                   className="min-h-11 min-w-11 rounded-full p-2.5 text-charcoal/80 hover:bg-parchment"
@@ -202,59 +202,72 @@ function NotesPanel({ episodeId, arrangerMode }: { episodeId: number; arrangerMo
 
   return (
     <>
-      <section className="space-y-3">
+      <section className="space-y-4 pb-10">
         <div className="flex items-center gap-2">
           <Zap className="h-4 w-4 text-oxford" />
-          <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/85">Arranger Notes</h3>
+          <h3 className="font-ui mt-0 mb-4 text-base font-semibold uppercase tracking-wide leading-tight text-charcoal/90 md:mb-3">
+            Arranger Notes
+          </h3>
         </div>
         {episode.arrangerPresence.map((note, index) => (
-          <div
-            key={`${episode.id}-arranger-${index}`}
-            className={`rounded-lg border p-3 ${
+          <Fragment key={`${episode.id}-arranger-${index}`}>
+            <div className={`rounded-lg border p-3 ${
               arrangerMode ? "border-oxford/40 bg-oxford/5" : "border-charcoal/10 bg-parchment"
-            }`}
-          >
-            <p className="font-ui text-xs uppercase tracking-wide text-charcoal/80">{note.cue}</p>
-            <p className="mt-1 font-ui text-base leading-relaxed text-charcoal/95">{note.commentary}</p>
-          </div>
+            }`}>
+              <blockquote className="my-6 border-l-2 border-slate-200 pl-4 font-ui text-sm italic text-slate-600">
+                {note.cue}
+              </blockquote>
+              <p className="mb-5 font-ui text-base leading-relaxed text-charcoal/95 md:mb-4">{note.commentary}</p>
+            </div>
+            {index < episode.arrangerPresence.length - 1 ? <hr className="my-10 border-slate-100" /> : null}
+          </Fragment>
         ))}
       </section>
 
-      <section className="space-y-3">
+      <hr className="my-10 border-slate-100" />
+      <section className="space-y-4 pb-10">
         <div className="flex items-center gap-2">
           <Music className="h-4 w-4 text-oxford" />
-          <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/85">Intermediality</h3>
+          <h3 className="font-ui mt-8 mb-4 text-base font-semibold uppercase tracking-wide leading-tight text-charcoal/90 md:mt-6 md:mb-3">
+            Intermediality
+          </h3>
         </div>
-        <ul className="space-y-2">
+        <ul className="ml-4 space-y-3">
           {episode.intermediality.music.map((item, index) => (
-            <li key={`${episode.id}-music-${index}`} className="rounded-lg bg-parchment p-3 font-ui text-base text-charcoal/95">
+            <li key={`${episode.id}-music-${index}`} className="rounded-lg bg-parchment p-3 font-ui text-base leading-relaxed text-charcoal/95 mb-5 md:mb-4">
               {item}
             </li>
           ))}
         </ul>
       </section>
 
-      <section className="space-y-3">
-        <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/85">Literature Review</h3>
-        <ul className="space-y-2">
+      <hr className="my-10 border-slate-100" />
+      <section className="space-y-4 pb-10">
+        <h3 className="font-ui mt-8 mb-4 text-base font-semibold uppercase tracking-wide leading-tight text-charcoal/90 md:mt-6 md:mb-3">
+          Literature Review
+        </h3>
+        <ul className="ml-4 space-y-3">
           {episode.scholarlyAnnotations.literatureReview.map((item, index) => (
-            <li key={`${episode.id}-lit-${index}`} className="rounded-lg bg-parchment p-3 font-ui text-base text-charcoal/95">
+            <li key={`${episode.id}-lit-${index}`} className="rounded-lg bg-parchment p-3 font-ui text-base leading-relaxed text-charcoal/95 mb-5 md:mb-4">
               {item}
             </li>
           ))}
         </ul>
       </section>
 
-      <section className="space-y-3 rounded-xl border border-charcoal/10 bg-white p-4">
+      <hr className="my-10 border-slate-100" />
+      <section className="space-y-4 rounded-xl border border-charcoal/10 bg-white p-4 pb-10">
         <div className="flex items-center gap-2">
           <BookOpen className="h-4 w-4 text-oxford" />
-          <h3 className="font-ui text-sm font-semibold uppercase tracking-wide text-charcoal/85">Further Reading</h3>
+          <h3 className="font-ui mt-8 mb-4 text-base font-semibold uppercase tracking-wide leading-tight text-charcoal/90 md:mt-6 md:mb-3">
+            Further Reading
+          </h3>
         </div>
         <p className="font-literary text-lg text-charcoal">
           {recommendedWork.title} ({recommendedWork.year})
         </p>
-        <p className="font-ui text-base text-charcoal/90">{recommendedWork.author}</p>
-        <p className="font-ui text-base leading-relaxed text-charcoal/95">{recommendedWork.connection.note}</p>
+        <p className="mb-5 font-ui text-base text-charcoal/90 md:mb-4">{recommendedWork.author}</p>
+        <p className="mb-5 font-ui text-base leading-relaxed text-charcoal/95 md:mb-4">{recommendedWork.connection.note}</p>
         <Link
           href="/library"
           className="inline-flex min-h-11 items-center font-ui text-sm font-medium text-oxford underline decoration-1 underline-offset-4"
