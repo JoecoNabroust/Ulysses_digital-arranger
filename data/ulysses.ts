@@ -1231,7 +1231,7 @@ export interface CharacterProfile {
   name: string;
   role: "Major" | "Minor";
   relationships: string[];
-  episodes: number[];
+  episodes: Record<number, { status: "Present" | "Mentioned"; note: string }>;
 }
 
 export const characterProfiles: CharacterProfile[] = [
@@ -1239,30 +1239,68 @@ export const characterProfiles: CharacterProfile[] = [
     name: "Leopold Bloom",
     role: "Major",
     relationships: ["Molly Bloom (spouse)", "Stephen Dedalus (mentee/provisional son)"],
-    episodes: [4, 5, 6, 8, 10, 11, 12, 13, 15, 16, 17, 18]
+    episodes: {
+      4: { status: "Present", note: "Introduced in domestic routine at 7 Eccles Street." },
+      5: { status: "Present", note: "Navigates postal, liturgical, and sensory Dublin circuits." },
+      6: { status: "Present", note: "Attends Paddy Dignam's funeral procession and burial." },
+      8: { status: "Present", note: "Wanders lunchtime cityscapes and reflects on appetite." },
+      10: { status: "Present", note: "Appears in distributed city montage trajectories." },
+      11: { status: "Present", note: "Central listening consciousness in the Ormond soundscape." },
+      12: { status: "Present", note: "Confronts Citizen's hostility in the pub scene." },
+      13: { status: "Present", note: "Observes Gerty at Sandymount in asymmetrical encounter." },
+      14: { status: "Mentioned", note: "Referenced in hospital discourse before re-entry." },
+      15: { status: "Present", note: "Nighttown hallucinations stage his social and psychic trials." },
+      16: { status: "Present", note: "Offers practical care to Stephen in the shelter." },
+      17: { status: "Present", note: "Hosts Stephen at Eccles Street in catechistic mode." },
+      18: { status: "Mentioned", note: "Seen through Molly's retrospective monologue." }
+    }
   },
   {
     name: "Molly Bloom",
     role: "Major",
     relationships: ["Leopold Bloom (spouse)", "Blazes Boylan (lover)"],
-    episodes: [4, 8, 11, 18]
+    episodes: {
+      4: { status: "Present", note: "Appears in the bedroom dialogue and household exchange." },
+      8: { status: "Mentioned", note: "Bloom's midday thought repeatedly returns to her." },
+      11: { status: "Mentioned", note: "Boylan appointment and musical world shape Bloom's listening." },
+      15: { status: "Mentioned", note: "Nighttown fantasies refract Bloom's anxieties about Molly." },
+      18: { status: "Present", note: "Primary narrative voice in Penelope's monologue." }
+    }
   },
   {
     name: "Stephen Dedalus",
     role: "Major",
     relationships: ["Buck Mulligan (rival companion)", "Leopold Bloom (host/fatherly figure)"],
-    episodes: [1, 2, 3, 7, 9, 10, 14, 15, 16, 17]
+    episodes: {
+      1: { status: "Present", note: "Central consciousness in the tower opening." },
+      2: { status: "Present", note: "Schoolroom and Deasy office debates frame his position." },
+      3: { status: "Present", note: "Sandymount strand interior monologue dominates the episode." },
+      7: { status: "Mentioned", note: "Journal office circuits reference Stephen's movements." },
+      9: { status: "Present", note: "Leads Shakespeare disputation in the National Library." },
+      10: { status: "Present", note: "One node in the Wandering Rocks montage network." },
+      14: { status: "Present", note: "Participates in hospital rhetoric and nocturnal drift." },
+      15: { status: "Present", note: "Hallucinatory confrontation culminates in collapse." },
+      16: { status: "Present", note: "Accompanies Bloom to the shelter in post-Circe fatigue." },
+      17: { status: "Present", note: "Shares provisional hospitality scene at Eccles Street." },
+      18: { status: "Mentioned", note: "Appears in Molly's memory and evaluative recall." }
+    }
   },
   {
     name: "The Citizen",
     role: "Minor",
     relationships: ["Leopold Bloom (ideological adversary)"],
-    episodes: [12]
+    episodes: {
+      12: { status: "Present", note: "Embodies exclusionary nationalism in Cyclops." },
+      17: { status: "Mentioned", note: "Echoed through Bloom's retrospective recollections." }
+    }
   },
   {
     name: "Bella Cohen",
     role: "Minor",
     relationships: ["Leopold Bloom (nighttown antagonist-host)", "Stephen Dedalus (witness)"],
-    episodes: [15]
+    episodes: {
+      15: { status: "Present", note: "Nighttown figure controlling key Circe transformations." },
+      16: { status: "Mentioned", note: "Reverberates in post-hallucinatory aftertalk." }
+    }
   }
 ];

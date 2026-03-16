@@ -160,6 +160,22 @@ export const scholarsLibrary: ScholarWork[] = [
     }
   },
   {
+    id: "campbell-1991",
+    title: "Mythic Worlds, Modern Words: On the Art of James Joyce",
+    author: "Joseph Campbell",
+    year: 1991,
+    category: "Historical Context",
+    tags: ["Mythic", "Archetypal", "Odyssey"],
+    scholarsTake: [
+      "Campbell reads Joyce through comparative mythology, emphasizing recurrent archetypal patterns and ritual structures beneath modern Dublin life.",
+      "For Ulysses, he highlights how Homeric scaffolding and symbolic recurrence organize the narrative's apparent everyday sprawl into a coherent mythic architecture."
+    ],
+    connection: {
+      note: "Especially useful for Odyssey correspondences and archetypal framing in episodes 1, 9, 10, and 18.",
+      episodes: [1, 9, 10, 18]
+    }
+  },
+  {
     id: "moseley-2022",
     title: "The Oxford Handbook of James Joyce",
     author: "Brian L. Price, John Whittier-Ferguson, and Maud Ellmann (eds.)",
@@ -198,7 +214,9 @@ export const libraryTags = [
   "Reception",
   "Teaching",
   "21st Century",
-  "Global Joyce"
+  "Global Joyce",
+  "Mythic",
+  "Archetypal"
 ] as const;
 
 export type LibraryTag = (typeof libraryTags)[number];

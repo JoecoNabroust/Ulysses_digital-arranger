@@ -144,7 +144,7 @@ export function DigitalArrangerShell() {
           </motion.section>
         </AnimatePresence>
 
-        <CharacterHub characters={characterProfiles} />
+        <CharacterHub characters={characterProfiles} activeEpisodeId={activeEpisode.id} />
         </main>
       </div>
 
@@ -153,7 +153,7 @@ export function DigitalArrangerShell() {
         onClick={() => setNotesOpen(true)}
         className="fixed bottom-6 right-6 z-20 inline-flex min-h-11 items-center gap-2 rounded-full bg-oxford px-4 py-3 font-ui text-sm text-white shadow-lg lg:hidden"
       >
-        <Zap className="h-4 w-4" />
+        <Zap className="h-4 w-4 text-slate-400" strokeWidth={1.75} />
         Notes
       </button>
 
@@ -204,7 +204,7 @@ function NotesPanel({ episodeId, arrangerMode }: { episodeId: number; arrangerMo
     <>
       <section className="space-y-4 pb-10">
         <div className="flex items-center gap-2">
-          <Zap className="h-4 w-4 text-oxford" />
+          <Zap className="h-4 w-4 text-slate-400" strokeWidth={1.75} />
           <h3 className="font-ui mt-0 mb-4 text-base font-semibold uppercase tracking-wide leading-tight text-charcoal/90 md:mb-3">
             Arranger Notes
           </h3>

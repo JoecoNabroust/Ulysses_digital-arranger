@@ -17,7 +17,7 @@ export function ArrangerToggle() {
       }`}
       aria-pressed={arrangerMode}
     >
-      <Zap className="h-4 w-4" />
+      <Zap className="h-4 w-4 text-slate-400" strokeWidth={1.75} />
       Arranger Mode {arrangerMode ? "On" : "Off"}
     </button>
   );
